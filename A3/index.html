@@ -6,15 +6,22 @@
     <title>Document</title>
     <script>
         function ans() {
-            let a=Number(t1.value)
-            let b=Number(t2.value)
+            let a=Number(txtName1.value)
+            let b=Number(txtName2.value)
             alert(a+b);
+        }
+        function ans() {
+            let a=Number(txtName3.value)
+            let b=Number(txtName4.value)
+            alert(a-b);
         }
     </script>
 </head>
 <body>
     <input type="text" id="txtName1"/>
     <input type="text" id="txtName2"/>
+    <input type="text" id="txtName3"/>
+    <input type="text" id="txtName4"/>
     <button onclick="ans()" style="background-color: aqua;">Click</button>
 </body>
 </html>
