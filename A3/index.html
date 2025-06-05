@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        function ans() {
+        function add() {
             let a=Number(txtName1.value)
             let b=Number(txtName2.value)
             alert(a+b);
         }
-        function ans() {
+        function subtract() {
             let a=Number(txtName3.value)
             let b=Number(txtName4.value)
             alert(a-b);
@@ -20,9 +20,10 @@
 <body>
     <input type="text" id="txtName1"/>
     <input type="text" id="txtName2"/>
+    <br>
     <input type="text" id="txtName3"/>
     <input type="text" id="txtName4"/>
-    <button onclick="ans()" style="background-color: aqua;">Click</button>
-    <button onclick="ans()" style="background-color: aqua;">Click</button>
+    <button onclick="add()" style="background-color: aqua;">Add</button>
+    <button onclick="subtract()" style="background-color: aqua;">subtract</button>
 </body>
 </html>
