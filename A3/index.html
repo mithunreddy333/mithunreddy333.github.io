@@ -15,6 +15,16 @@
             let b=Number(txtName4.value)
             alert(a-b);
         }
+        function multiply() {
+            let a=Number(txtName3.value)
+            let b=Number(txtName4.value)
+            alert(a*b);
+        }
+        function divide() {
+            let a=Number(txtName3.value)
+            let b=Number(txtName4.value)
+            alert(a/b);
+        }
     </script>
 </head>
 <body>
@@ -29,4 +39,18 @@
        <input type="text" id="txtName4"/>
        <button onclick="subtract()" style="background-color: aqua;">subtract</button>
     </div>
+    <br>
+    <div>
+       <input type="text" id="txtName5"/>
+       <input type="text" id="txtName6"/>
+       <button onclick="multiply()" style="background-color: aqua;">multiply</button>
+    </div>
+    <br>
+    <div>
+       <input type="text" id="txtName7"/>
+       <input type="text" id="txtName8"/>
+       <button onclick="divide()" style="background-color: aqua;">divide</button>
+    </div>
+
+
 </html>
