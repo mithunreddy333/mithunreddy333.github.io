@@ -26,8 +26,8 @@
         }
 
         function calc() {
-            const num1 = Number(txtName1.value);
-            const num2 = Number(txtName2.value);
+           const num1 = Number(document.getElementById("txtName1").value);
+           const num2 = Number(document.getElementById("txtName2").value);
             document.write("Sum: " + add(txtName1, txtName2) + "<br>");
             document.write("Difference: " + subtract(txtName1, txtName2) + "<br>");
             document.write("Product: " + multiply(txtName1, txtName2) + "<br>");
