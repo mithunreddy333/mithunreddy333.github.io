@@ -26,25 +26,25 @@
         }
 
         function calc() {
-            const num1 = Number(document.getElementById('input1').value);
-            const num2 = Number(document.getElementById('input2').value);
-            document.write("Sum: " + add(num1, num2) + "<br>");
-            document.write("Difference: " + subtract(num1, num2) + "<br>");
-            document.write("Product: " + multiply(num1, num2) + "<br>");
-            document.write("Quotient: " + divide(num1, num2) + "<br>");
+            const num1 = Number(txtName1.value);
+            const num2 = Number(txtName2.value);
+            document.write("Sum: " + add(txtName1, txtName2) + "<br>");
+            document.write("Difference: " + subtract(txtName1, txtName2) + "<br>");
+            document.write("Product: " + multiply(txtName1, txtName2) + "<br>");
+            document.write("Quotient: " + divide(txtName1, txtName2) + "<br>");
         }
     </script>
 </head>
 <body>
-    <h2>Objectives</h2>
+    <!-- <h2>Objectives</h2>
     <ul>
         <li>Take input of two numbers</li>
         <li>When clicked button, it should call calc</li>
         <li>calc function is used to callback add, subtract, multiply, divide</li>
-    </ul>
+    </ul> -->
 
-    <input type="number" id="input1" />
-    <input type="number" id="input2" />
-    <button onclick= calc() style="background-color: yellow;">Calc</button> 
+    <input type="number" id="txtName1" />
+    <input type="number" id="txtName2" />
+    <button onclick= calc() style="background-color: aqua;">Calc</button> 
 </body>
 </html>
