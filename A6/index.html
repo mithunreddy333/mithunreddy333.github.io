@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Fruit List</h1>
+        <input type="text" id="fruit">
+        <button onclick="add()">Add</button>
+        <div id="Fruitlist"></div>
+    </center>
+
+    <script>
+        let arr = [];
+
+        const add = () => {
+            const input = document.getElementById("fruit");
+            arr.push(input.value);
+            input.value = "";
+            const list = arr.map((a) => 
+                `<div>${a} <button onclick="del('${a}')">Delete</button></div>`
+            ).join(" ");
+            document.getElementById("Fruitlist").innerHTML = list;
+        }
+
+        const del = (fruitid) => {
+            arr = arr.filter((a) => a !== fruitid);
+            const list = arr.map((a) => 
+                `<div>${a} <button onclick="del('${a}')">Delete</button></div>`
+            ).join(" ");
+            document.getElementById("Fruitlist").innerHTML = list;
+        }
+    </script>
+</body>
+</html>
