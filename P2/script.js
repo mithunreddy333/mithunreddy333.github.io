@@ -32,7 +32,7 @@ const showHome = () => {
     <h1>Welcome ${user.name}</h1>
     <hr>
     <p>
-      <select id="action">
+      <select id="txtaction">
         <option value="0">--select--</option>
         <option value="1">Deposit</option>
         <option value="2">Withdraw</option>
@@ -77,7 +77,7 @@ const validateUser = () => {
 };
 
 const performTransaction=() => {
-    const action=document.getElementById("action").value;
+    const action=document.getElementById("txtaction").value;0
     const amount=Number(document.getElementById("txtAmount").value);
     if(action==1) {
         user.balance+=amount;
