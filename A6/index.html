@@ -3,36 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Fruit List</title>
 </head>
 <body>
     <center>
         <h1>Fruit List</h1>
-        <input type="text" id="fruit">
+        <input type="text" id="fruit" placeholder="Enter or search fruit">
         <button onclick="add()">Add</button>
+        <button onclick="search()">Search</button>
+        <button onclick="showAll()">Show All</button>
         <div id="Fruitlist"></div>
     </center>
 
     <script>
         let arr = [];
 
+        const display = (items) => {
+            const list = items.map(fruit => 
+                `<div>${fruit} <button onclick="del('${fruit}')">Delete</button></div>`
+            ).join("");
+            document.getElementById("Fruitlist").innerHTML = list;
+        };
+
         const add = () => {
             const input = document.getElementById("fruit");
-            arr.push(input.value);
-            input.value = "";
-            const list = arr.map((a) => 
-                `<div>${a} <button onclick="del('${a}')">Delete</button></div>`
-            ).join(" ");
-            document.getElementById("Fruitlist").innerHTML = list;
-        }
+            if (input.value !== "") {
+                arr.push(input.value);
+                input.value = "";
+                display(arr);
+            }
+        };
 
-        const del = (fruitid) => {
-            arr = arr.filter((a) => a !== fruitid);
-            const list = arr.map((a) => 
-                `<div>${a} <button onclick="del('${a}')">Delete</button></div>`
-            ).join(" ");
-            document.getElementById("Fruitlist").innerHTML = list;
-        }
+        const del = (fruitName) => {
+            arr = arr.filter(f => f !== fruitName);
+            display(arr);
+        };
+
+        const search = () => {
+            const searchText = document.getElementById("fruit").value.toLowerCase();
+            const filtered = arr.filter(f => f.toLowerCase().includes(searchText));
+            display(filtered);
+        };
+
+        const showAll = () => {
+            display(arr);
+        };
     </script>
 </body>
 </html>
