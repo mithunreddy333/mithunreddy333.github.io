@@ -36,6 +36,7 @@ const showHome = () => {
         <option value="0">--select--</option>
         <option value="1">Deposit</option>
         <option value="2">Withdraw</option>
+        <option value="3">FundTransfer</option>
       </select>
     </p>
     <p>
@@ -77,7 +78,7 @@ const validateUser = () => {
 };
 
 const performTransaction=() => {
-    const action=document.getElementById("txtaction").value;0
+    const action=document.getElementById("txtaction").value;
     const amount=Number(document.getElementById("txtAmount").value);
     if(action==1) {
         user.balance+=amount;
@@ -86,10 +87,19 @@ const performTransaction=() => {
         if(amount<=user.balance) {
             user.balance-=amount;
         }
+    
         else {
             alert("Insufficient balance");
             return;
         }
     }
-    showHome();
+//     else if (action == 3) {
+//     const FundTransfer = document.getElementById("txtfundtransfer").value;
+//     const recipient = users.find(u => u.email === recipientEmail);
+//     showHome();
+// };
+
+// const FundTransfer = () => {
+//   const action = document.getElementById("txtaction").value;
+//   document.getElementById("txtfundtransfer")
 };

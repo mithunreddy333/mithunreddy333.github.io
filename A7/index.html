@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+        const products=[
+            {id:1,
+             name:"product 1",
+             desc:"Description of the product1",
+             price:2500,
+             imgUrl:"https://picsum.photos/id1/237/200/300"
+            },
+            {id:2,
+             name:"product 2",
+             desc:"Description of the product2",
+             price:2800,
+             imgUrl:"https://picsum.photos/id2/237/200/300"
+            },
+             {id:3,
+             name:"product 3",
+             desc:"Description of the product3",
+             price:2600,
+             imgUrl:"https://picsum.photos/id3/237/200/300"
+            },
+        ];
+        let str="<div>"
+        products.map((product)=> {
+        str+=`<div><img src=${}</div>   
+        });
+    </script>
+</body>
+</html>

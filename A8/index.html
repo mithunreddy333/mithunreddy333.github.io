@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search User</title>
+  </head>
+  <body>
+    <input type="text" id="txtsearch" />
+    <button onclick="search()">Submit</button>
+    <div id="dvUsers"></div>
+
+    <script>
+      const url = "https://jsonplaceholder.typicode.com/users";
+      let userData = [];
+
+      fetch(url)
+        .then((res) => res.json())
+        .then((users) => {
+          userData = users;
+          displayUsers(userData);
+        });
+
+      const displayUsers = (users) => {
+        let str = "<div>";
+        users.forEach((user) => {
+          str += `<div>${user.name}</div>`;
+        });
+        document.getElementById("dvUsers").innerHTML = str + "</div>";
+      };
+
+      const displaySingleUser = (user) => {
+        if (user) {
+          document.getElementById("dvUsers").innerHTML = `<div>${user.name}</div>`;
+        } else {
+          document.getElementById("dvUsers").innerHTML = "<div>No user found</div>";
+        }
+      };
+
+      const search = () => {
+        const searchText = document.getElementById("txtsearch").value.toLowerCase();
+        const matchedUser = userData.find((user) =>
+          user.name.toLowerCase().includes(searchText)
+        );
+        displaySingleUser(matchedUser);
+      };
+    </script>
+  </body>
+</html>
